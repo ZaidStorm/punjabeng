@@ -1,85 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Punjab Industrial Engineering Services</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .led-glow { filter: drop-shadow(0 0 8px #f4b400); transition: all 0.3s ease; }
+    .led-glow:hover { transform: scale(1.05); filter: drop-shadow(0 0 15px #f4b400); }
+    .portfolio-img { border-radius: 8px; transition: transform 0.4s ease, box-shadow 0.4s ease; }
+    .portfolio-img:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(244,180,0,0.4); }
+    .section-title { text-align: center; margin-bottom: 30px; font-size: 28px; text-shadow: 0 0 6px #f4b400; }
+  </style>
 </head>
 <body>
 
-<!-- HEADER with Navigation -->
-<header class="header">
-  <div class="container header-flex">
-    <div class="logo">
-      <h1>PIE</h1>
-      <span>Punjab Industrial Engineering Services</span>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="nav">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+<header class="bg-dark sticky-top shadow-sm">
+  <div class="container d-flex justify-content-between align-items-center py-2">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/logg.png" alt="PIE Logo" height="50" class="led-glow me-2">
+      <span class="text-light small">Punjab Industrial Engineering Services</span>
+    </a>
+    <button class="navbar-toggler btn btn-outline-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <i class="bi bi-list fs-3 text-light"></i>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link text-light fw-bold" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-light fw-bold" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link text-light fw-bold active" href="portfolio.html">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link text-light fw-bold" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-light fw-bold" href="contact.html">Contact</a></li>
+        <li class="nav-item d-flex gap-2 mt-2 mt-md-0">
+          <a href="tel:03006904153" class="btn btn-warning btn-sm fw-bold"><i class="bi bi-telephone-fill"></i> Call</a>
+          <a href="https://wa.me/923006904153" target="_blank" class="btn btn-success btn-sm fw-bold"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+        </li>
       </ul>
-    </nav>
-
-    <!-- Call & WhatsApp buttons + mobile toggle -->
-    <div class="header-contact">
-      <a href="tel:03008691400" class="call-btn">
-        <i class="fa-solid fa-phone"></i> Call Now
-      </a>
-      <a href="https://wa.me/923008691400" target="_blank" class="whatsapp-btn">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-      </a>
-      <div class="menu-toggle"><i class="fa fa-bars"></i></div>
     </div>
   </div>
 </header>
 
-
-  <!-- PORTFOLIO SECTION -->
-  <section class="portfolio">
-    <div class="container">
-      <h3 class="section-title">Our Projects & Portfolio</h3>
-
-      <div class="portfolio-grid">
-        <img src="images/project1.jpg" alt="Boiler Project 1" />
-        <img src="images/project2.jpg" alt="Boiler Project 2" />
-        <img src="images/project3.jpg" alt="Wet Scrubber Project" />
-        <img src="images/project4.jpg" alt="Paddy Dryer Project" />
-        <img src="images/project5.jpg" alt="Industrial Boiler" />
-        <img src="images/project6.jpg" alt="Boiler Installation" />
+<section class="portfolio py-5">
+  <div class="container">
+    <h3 class="section-title">Our Projects & Portfolio</h3>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <img src="images/project1.jpg" alt="Boiler Project 1" class="img-fluid portfolio-img led-glow">
       </div>
-    </div>
-  </section>
-
-  <!-- CONTACT BUTTONS -->
-  <section class="contact">
-    <div class="container">
-      <h3 class="section-title">Contact Us</h3>
-      <div class="contact-buttons">
-        <a href="tel:03008691400" class="btn-primary">
-          Call Now
-        </a>
-        <a href="https://wa.me/923008691400" target="_blank" class="btn-secondary">
-          WhatsApp
-        </a>
+      <div class="col-md-4">
+        <img src="images/project2.jpg" alt="Boiler Project 2" class="img-fluid portfolio-img led-glow">
       </div>
+      <div class="col-md-4">
+        <img src="images/project3.jpg" alt="Wet Scrubber Project" class="img-fluid portfolio-img led-glow">
+      </div>
+      <div class="col-md-4">
+        <img src="images/project4.jpg" alt="Paddy Dryer Project" class="img-fluid portfolio-img led-glow">
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2026 Punjab Industrial Engineering Services | punjabeng.com</p>
-  </footer>
+<section class="contact py-5 text-center">
+  <div class="container">
+    <h3 class="section-title mb-3">Contact Us</h3>
+    <p><strong>Phone:</strong> 0300-6904153</p>
+    <div class="contact-buttons">
+      <a href="tel:03006904153" class="btn btn-warning btn-lg fw-bold led-glow"><i class="bi bi-telephone-fill"></i> Call Now</a>
+      <a href="https://wa.me/923006904153" target="_blank" class="btn btn-success btn-lg fw-bold led-glow"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+</section>
 
+<footer class="footer bg-dark text-light py-3 text-center">
+  <p>© 2026 Punjab Industrial Engineering Services | punjabeng.com</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

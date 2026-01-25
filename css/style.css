@@ -1,3 +1,4 @@
+/* ================= GLOBAL ================= */
 * {
   margin: 0;
   padding: 0;
@@ -16,8 +17,8 @@ body {
   margin: auto;
 }
 
-/* HEADER */
-.header {
+/* ================= HEADER ================= */
+.header, .bg-dark {
   background: #111;
   color: #fff;
   padding: 10px 0;
@@ -58,7 +59,7 @@ body {
   background: #25d366;
 }
 
-/* NAVIGATION */
+/* ================= NAVIGATION ================= */
 .nav-links {
   list-style: none;
   display: flex;
@@ -103,11 +104,33 @@ body {
   }
 }
 
-/* HERO */
+@media (max-width: 991px) {
+  #navbarContent {
+    background-color: #343a40;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  #navbarContent .nav-item {
+    width: 100%;
+    margin: 5px 0;
+  }
+  #navbarContent .nav-item a {
+    display: block;
+    padding: 10px 15px;
+    text-align: center;
+  }
+  #navbarContent .d-flex.gap-2 {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+}
+
+/* ================= HERO ================= */
 .hero {
-  background: #f4b400;
-  padding: 60px 0;
+  background: linear-gradient(135deg, #f4b400, #ffcc33);
   text-align: center;
+  padding: 60px 0;
 }
 
 .hero h2 {
@@ -123,7 +146,7 @@ body {
   margin: 5px;
 }
 
-/* BUTTONS */
+/* ================= BUTTONS ================= */
 .btn-primary,
 .btn-secondary {
   padding: 12px 20px;
@@ -142,14 +165,18 @@ body {
   color: #fff;
 }
 
-/* SECTIONS */
-.section-title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 26px;
+/* ================= LED & HOVER EFFECTS ================= */
+.led-glow {
+  filter: drop-shadow(0 0 8px #f4b400);
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* SERVICES */
+.led-glow:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 15px #f4b400);
+}
+
+/* ================= SERVICES ================= */
 .services {
   padding: 50px 0;
 }
@@ -161,14 +188,35 @@ body {
 }
 
 .service-box {
-  padding: 20px;
-  background: #eee;
+  background: #f9f9f9;
+  padding: 25px;
   text-align: center;
   font-weight: bold;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: all 0.4s ease;
   border-left: 5px solid #f4b400;
 }
 
-/* WHY US */
+.service-box i {
+  font-size: 36px;
+  color: #f4b400;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.service-box:hover i {
+  transform: scale(1.2);
+  color: #ffcc33;
+}
+
+.service-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(244,180,0,0.4);
+}
+
+/* ================= WHY US ================= */
 .why-us {
   background: #111;
   color: #fff;
@@ -185,7 +233,7 @@ body {
   margin: 10px 0;
 }
 
-/* PORTFOLIO */
+/* ================= PORTFOLIO ================= */
 .portfolio {
   padding: 50px 0;
 }
@@ -198,20 +246,55 @@ body {
 
 .portfolio-grid img {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* CONTACT */
+.portfolio-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(244,180,0,0.6);
+}
+
+/* ================= CONTACT ================= */
 .contact {
   background: #f4b400;
   padding: 40px 0;
   text-align: center;
 }
 
-/* FOOTER */
+.contact-buttons a {
+  margin: 10px;
+  transition: all 0.3s ease;
+}
+
+.contact-buttons a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+.pre-filled-message {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #333;
+  background: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 12px;
+  border-radius: 6px;
+  display: none; /* hidden by default */
+}
+
+/* ================= FOOTER ================= */
 .footer {
   background: #111;
   color: #fff;
   text-align: center;
   padding: 10px;
+}
+
+/* ================= SECTION TITLES ================= */
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 26px;
 }
