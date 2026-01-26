@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Punjab Industrial Engineering Services</title>
 
+    <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logg.png">
+  <link rel="apple-touch-icon" href="images/logg.png">
+
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -17,32 +22,43 @@
 </head>
 <body>
 
-<header class="bg-dark sticky-top shadow-sm">
-  <div class="container d-flex justify-content-between align-items-center py-2">
+<!-- Updated Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+  <div class="container">
+    <!-- Brand / Logo -->
     <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="images/logg.png" alt="PIE Logo" height="50" class="led-glow me-2">
-      <span class="text-light small">Punjab Industrial Engineering Services</span>
+      <img src="images/logg.png" alt="PIE Logo" height="30" class="me-2 rounded-circle">
+
+      <span>Punjab Industrial Engineering Services</span>
     </a>
-    <button class="navbar-toggler btn btn-outline-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-      <i class="bi bi-list fs-3 text-light"></i>
+
+    <!-- Hamburger menu for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-      <ul class="navbar-nav align-items-center">
-        <li class="nav-item"><a class="nav-link text-light fw-bold" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link text-light fw-bold" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link text-light fw-bold" href="portfolio.html">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link text-light fw-bold" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link text-light fw-bold active" href="contact.html">Contact</a></li>
-        <li class="nav-item d-flex gap-2 mt-2 mt-md-0">
-          <a href="tel:03006904153" class="btn btn-warning btn-sm fw-bold"><i class="bi bi-telephone-fill"></i> Call</a>
-          <a href="https://wa.me/923006904153" target="_blank" class="btn btn-success btn-sm fw-bold"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link fw-bold" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="portfolio.html">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold active" href="contact.html">Contact</a></li>
+        <li class="nav-item d-lg-flex gap-2 mt-3 mt-lg-0">
+          <a href="tel:03006904153" class="btn btn-warning btn-sm fw-bold">
+            <i class="bi bi-telephone-fill"></i> Call
+          </a>
+          <a href="https://wa.me/923006904153" target="_blank" id="contactWhatsApp" class="btn btn-success btn-sm fw-bold">
+            <i class="bi bi-whatsapp"></i> WhatsApp
+          </a>
         </li>
       </ul>
     </div>
   </div>
-</header>
+</nav>
 
-<section class="contact py-5 bg-light text-center">
+<section class="contact py-8 bg-light text-center">
   <div class="container">
     <h3 class="section-title">Get in Touch</h3>
     <p><strong>Location:</strong> 12 Kilometer Arifwala Road, Sahiwal</p>

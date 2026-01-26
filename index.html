@@ -7,7 +7,7 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/logg.png">
-  <link rel="apple-touch-icon" href="images/logg.png">
+ 
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,38 +23,44 @@
 </head>
 <body>
 
-<!-- ================= HEADER / NAVBAR ================= -->
-<header class="bg-dark sticky-top shadow-sm">
-  <div class="container d-flex justify-content-between align-items-center py-2">
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+  <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="images/logg.png" alt="PIE Logo" height="50" class="led-glow me-2">
-      <span class="text-light small">Punjab Industrial Engineering Services</span>
+      <img src="images/logg.png" alt="PIE Logo" height="30" class="me-2 rounded-circle">
+
+      <span>Punjab Industrial Engineering Services</span>
     </a>
-    <button class="navbar-toggler btn btn-outline-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="bi bi-list fs-3 text-light"></i>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-      <ul class="navbar-nav align-items-center">
-        <li class="nav-item"><a class="nav-link text-light fw-bold" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link text-light fw-bold" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link text-light fw-bold" href="portfolio.html">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link text-light fw-bold" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link text-light fw-bold" href="contact.html">Contact</a></li>
-        <li class="nav-item d-flex gap-2 mt-2 mt-md-0">
-          <a href="tel:03006904153" class="btn btn-warning btn-sm fw-bold"><i class="bi bi-telephone-fill"></i> Call</a>
-          <a href="https://wa.me/923006904153" target="_blank" class="btn btn-success btn-sm fw-bold"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link fw-bold" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="portfolio.html">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="contact.html">Contact</a></li>
+        <li class="nav-item d-lg-flex gap-2 mt-3 mt-lg-0">
+          <a href="tel:03006904153" class="btn btn-warning btn-sm fw-bold">
+            <i class="bi bi-telephone-fill"></i> Call
+          </a>
+          <a href="https://wa.me/923006904153" target="_blank" id="contactWhatsApp" class="btn btn-success btn-sm fw-bold">
+            <i class="bi bi-whatsapp"></i> WhatsApp
+          </a>
         </li>
       </ul>
     </div>
   </div>
-</header>
+</nav>
 
 <!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="container">
+<section class="hero py-5">
+  <div class="container text-center">
     <h2>Industrial Boilers & Paddy Drying Solutions</h2>
     <p>Fabrication, Installation, Repair & EPA-Compliant Boiler Systems Serving Industries Across Punjab</p>
-    <div class="hero-buttons">
+    <div class="hero-buttons mt-3">
       <a href="tel:03006904153" class="btn btn-dark btn-lg led-glow"><i class="bi bi-telephone-fill"></i> Call Now</a>
       <a href="https://wa.me/923006904153" target="_blank" class="btn btn-success btn-lg led-glow"><i class="bi bi-whatsapp"></i> WhatsApp</a>
     </div>
@@ -62,88 +68,95 @@
 </section>
 
 <!-- ================= SERVICES ================= -->
-<section class="services py-5">
+<section id="services" class="services py-5">
   <div class="container">
-    <h3 class="section-title mb-4 text-center">Our Services</h3>
+    <h3 class="section-title mb-4 text-center">
+      What service do you need? Tap below to message us on WhatsApp.
+    </h3>
+
     <div class="row g-4">
       <div class="col-md-3">
         <div class="service-box" onclick="sendWhatsApp('Industrial Boiler Installation')">
-          <i class="fa-solid fa-industry"></i>
+          <i class="fa-solid fa-industry fa-2x"></i>
           <h5 class="mt-2">Industrial Boiler Installation</h5>
           <p>Fabrication & installation of all types of boilers for industries.</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="service-box" onclick="sendWhatsApp('Boiler Repair & Maintenance')">
-          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <i class="fa-solid fa-screwdriver-wrench fa-2x"></i>
           <h5 class="mt-2">Boiler Repair & Maintenance</h5>
           <p>Regular maintenance & repair services to ensure smooth operations.</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="service-box" onclick="sendWhatsApp('Wet Scrubber Systems')">
-          <i class="fa-solid fa-fan"></i>
+          <i class="fa-solid fa-fan fa-2x"></i>
           <h5 class="mt-2">Wet Scrubber Systems</h5>
           <p>Clean gas outlets and control black smoke as per EPA standards.</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="service-box" onclick="sendWhatsApp('Black Smoke Control')">
-          <i class="fa-solid fa-cloud"></i>
+          <i class="fa-solid fa-cloud fa-2x"></i>
           <h5 class="mt-2">Black Smoke Control</h5>
           <p>Reduce emissions and maintain a clean industrial environment.</p>
         </div>
       </div>
     </div>
+
     <div class="row g-4 mt-2">
       <div class="col-md-3">
         <div class="service-box" onclick="sendWhatsApp('Paddy Drying Systems')">
-          <i class="fa-solid fa-seedling"></i>
+          <i class="fa-solid fa-seedling fa-2x"></i>
           <h5 class="mt-2">Paddy Drying Systems</h5>
           <p>Unique stainless steel paddy dryers for all types of rice mills.</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="service-box" onclick="sendWhatsApp('Turn-Key Industrial Projects')">
-          <i class="fa-solid fa-gears"></i>
+          <i class="fa-solid fa-gears fa-2x"></i>
           <h5 class="mt-2">Turn-Key Industrial Projects</h5>
           <p>Complete solutions from design to commissioning for industries.</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="service-box" onclick="sendWhatsApp('Fuel Systems')">
-          <i class="fa-solid fa-fire"></i>
+          <i class="fa-solid fa-fire fa-2x"></i>
           <h5 class="mt-2">Fuel Systems</h5>
           <p>Bio-fuel, water wall furnace, and chain grate systems.</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="service-box" onclick="sendWhatsApp('Skilled Boiler Engineers')">
-          <i class="fa-solid fa-user-tie"></i>
+          <i class="fa-solid fa-user-tie fa-2x"></i>
           <h5 class="mt-2">Skilled Boiler Engineers</h5>
           <p>1st Class Boiler Engineers for supervision and project support.</p>
         </div>
       </div>
     </div>
+
+    <!-- Optional: pre-filled message display -->
+    <div id="preMessage" class="text-center mt-3 text-success fw-bold"></div>
   </div>
 </section>
 
 <!-- ================= PORTFOLIO ================= -->
-<section class="portfolio">
+<section class="portfolio py-5">
   <div class="container">
-    <h3 class="section-title text-center">Our Projects & Portfolio</h3>
-    <div class="row portfolio-grid g-3">
+    <h3 class="section-title text-center mb-4">Our Projects & Portfolio</h3>
+    <div class="row g-3">
       <div class="col-md-3">
-        <img src="images/project1.jpg" alt="Boiler Project 1" class="led-glow" onclick="openModal(this)">
+        <img src="images/project1.jpg" class="img-fluid rounded" onclick="openModal(this)">
       </div>
       <div class="col-md-3">
-        <img src="images/project2.jpg" alt="Boiler Project 2" class="led-glow" onclick="openModal(this)">
+        <img src="images/project2.jpg" class="img-fluid rounded" onclick="openModal(this)">
       </div>
       <div class="col-md-3">
-        <img src="images/project3.jpg" alt="Wet Scrubber Project" class="led-glow" onclick="openModal(this)">
+        <img src="images/project3.jpg" class="img-fluid rounded" onclick="openModal(this)">
       </div>
       <div class="col-md-3">
-        <img src="images/project4.jpg" alt="Paddy Dryer Project" class="led-glow" onclick="openModal(this)">
+        <img src="images/project4.jpg" class="img-fluid rounded" onclick="openModal(this)">
       </div>
     </div>
   </div>
@@ -160,17 +173,24 @@
 </div>
 
 <!-- ================= CONTACT ================= -->
-<section class="contact py-5 text-center">
-  <div class="container">
+<section id="contact" class="contact-map-container bg-warning">
+  
+  <!-- Left Column: Contact Info -->
+  <div class="contact-text">
     <h3 class="section-title mb-3">Get in Touch</h3>
     <p><strong>Location:</strong> 12 Kilometer Arifwala Road, Sahiwal</p>
     <p><strong>Phone:</strong> 0300-6904153</p>
     <div class="contact-buttons">
-      <a id="contactCall" href="tel:03006904153" class="btn btn-warning btn-lg fw-bold led-glow"><i class="bi bi-telephone-fill"></i> Call Now</a>
-      <a id="contactWhatsApp" href="https://wa.me/923006904153" target="_blank" class="btn btn-success btn-lg fw-bold led-glow"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+      <a href="tel:03006904153" class="btn btn-warning btn-lg fw-bold led-glow">
+        <i class="bi bi-telephone-fill"></i> Call Now
+      </a>
+      <a href="https://wa.me/923006904153" target="_blank" id="contactWhatsAppContact" class="btn btn-success btn-lg fw-bold led-glow">
+        <i class="bi bi-whatsapp"></i> WhatsApp
+      </a>
     </div>
-
+  </div>
 </section>
+
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer bg-dark text-light py-3 text-center">
@@ -179,6 +199,7 @@
 
 <!-- Bootstrap JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <!-- Custom JS -->
 <script src="js/main.js"></script>
 

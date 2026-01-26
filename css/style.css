@@ -11,118 +11,51 @@ body {
   color: #111;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
+/* ================= BOOTSTRAP NAVBAR (FIXED & CLEAN) ================= */
+.navbar {
+  background-color: #111 !important;
 }
 
-/* ================= HEADER ================= */
-.header, .bg-dark {
-  background: #111;
+.navbar-brand span {
   color: #fff;
-  padding: 10px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  font-size: 13px;
 }
 
-.header-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo h1 {
-  color: #f4b400;
-}
-
-.logo span {
-  font-size: 12px;
-  display: block;
-}
-
-.header-contact a {
-  margin-left: 10px;
-  padding: 8px 12px;
-  text-decoration: none;
-  color: #fff;
-  border-radius: 4px;
-}
-
-.call-btn {
-  background: #f4b400;
-  color: #000;
-}
-
-.whatsapp-btn {
-  background: #25d366;
-}
-
-/* ================= NAVIGATION ================= */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #fff;
+.navbar-nav .nav-link {
+  color: #fff !important;
   font-weight: bold;
+  padding: 8px 14px;
+  transition: color 0.3s ease;
 }
 
-.nav-links li a.active {
-  color: #f4b400;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #f4b400 !important;
 }
 
-/* MOBILE MENU */
-.menu-toggle {
-  display: none;
-  cursor: pointer;
-  color: #fff;
-  font-size: 22px;
+.navbar-toggler {
+  border-color: #f4b400;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #111;
-    flex-direction: column;
-    width: 200px;
-    display: none;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
+.navbar-toggler-icon {
+  filter: invert(1);
 }
 
+/* Mobile dropdown spacing */
 @media (max-width: 991px) {
-  #navbarContent {
-    background-color: #343a40;
+  .navbar-collapse {
+    background-color: #111;
     padding: 15px;
     border-radius: 8px;
   }
-  #navbarContent .nav-item {
-    width: 100%;
-    margin: 5px 0;
-  }
-  #navbarContent .nav-item a {
-    display: block;
-    padding: 10px 15px;
+
+  .navbar-nav .nav-item {
     text-align: center;
+    margin: 6px 0;
   }
-  #navbarContent .d-flex.gap-2 {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
+
+  .navbar-nav .btn {
+    width: 100%;
   }
 }
 
@@ -146,25 +79,6 @@ body {
   margin: 5px;
 }
 
-/* ================= BUTTONS ================= */
-.btn-primary,
-.btn-secondary {
-  padding: 12px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-}
-
-.btn-primary {
-  background: #111;
-  color: #fff;
-}
-
-.btn-secondary {
-  background: #25d366;
-  color: #fff;
-}
-
 /* ================= LED & HOVER EFFECTS ================= */
 .led-glow {
   filter: drop-shadow(0 0 8px #f4b400);
@@ -181,22 +95,16 @@ body {
   padding: 50px 0;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-}
-
 .service-box {
   background: #f9f9f9;
   padding: 25px;
   text-align: center;
-  font-weight: bold;
   border-radius: 8px;
   border: 1px solid #ddd;
   cursor: pointer;
   transition: all 0.4s ease;
   border-left: 5px solid #f4b400;
+  height: 100%;
 }
 
 .service-box i {
@@ -216,32 +124,9 @@ body {
   box-shadow: 0 0 20px rgba(244,180,0,0.4);
 }
 
-/* ================= WHY US ================= */
-.why-us {
-  background: #111;
-  color: #fff;
-  padding: 50px 0;
-}
-
-.why-us ul {
-  list-style: none;
-  max-width: 600px;
-  margin: auto;
-}
-
-.why-us li {
-  margin: 10px 0;
-}
-
 /* ================= PORTFOLIO ================= */
 .portfolio {
-  padding: 50px 0;
-}
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
+  padding: 50px 1;
 }
 
 .portfolio-grid img {
@@ -258,10 +143,23 @@ body {
 
 /* ================= CONTACT ================= */
 .contact {
-  background: #f4b400;
-  padding: 40px 0;
-  text-align: center;
+  min-height: 80vh; /* takes at least 70% of viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers content vertically */
 }
+.contact-bg-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 600px; /* adjust as needed */
+  opacity: 0.1;     /* makes it subtle */
+  pointer-events: none; /* image won’t block clicks */
+  z-index: 1;
+}
+
 
 .contact-buttons a {
   margin: 10px;
@@ -281,7 +179,7 @@ body {
   border: 1px solid #ffeeba;
   padding: 12px;
   border-radius: 6px;
-  display: none; /* hidden by default */
+  display: none;
 }
 
 /* ================= FOOTER ================= */
@@ -298,3 +196,100 @@ body {
   margin-bottom: 30px;
   font-size: 26px;
 }
+
+/* ================= About Section ================= */
+/* Why Choose Us Section */
+.why-us {
+  background-color: #f8f9fa;
+}
+
+.why-us .section-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-shadow: 0 0 6px #f4b400;
+}
+
+.why-us ul {
+  padding-left: 1rem;
+}
+
+.why-us ul li {
+  margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .why-us .row {
+    text-align: center;
+  }
+
+  .why-us ul {
+    padding-left: 0;
+    list-style-position: inside;
+  }
+
+  .why-us img {
+    margin-bottom: 20px;
+  }
+}
+
+
+/* ================= Contact Section Layout ================= */
+#contact {
+  padding: 20px 15px; /* smaller height and smaller side gap */
+  background: var(--cream);
+}
+
+#contact .container {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 30px;
+  align-items: start;
+  text-align: center;
+}
+
+#contact h3.section-title {
+  text-align: left;
+  font-size: 32px;
+  font-weight: 700;
+  text-shadow: 0 0 6px #f4b400;
+}
+
+#contact .contact-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Left text content with slight left gap */
+.contact-text {
+  flex: 1 1 200px;          /* narrower text column */
+  text-align: left;
+  padding-left: 15px;       /* small gap from left */
+}
+
+
+.contact-text h3 {
+  font-size: 1.2rem;        /* smaller heading */
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+
+.contact-text p {
+  margin-bottom: 5px;
+  font-size: 0.8rem;        /* smaller text */
+  color: var(--text);
+}
+
+.contact-buttons {
+  margin-top: 8px;
+}
+
+.contact-buttons .btn {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 0.7rem;
+  padding: 5px 10px;
+}
+
