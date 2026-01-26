@@ -293,3 +293,43 @@ body {
   padding: 5px 10px;
 }
 
+/* ================= CONTACT FORM ================= */
+.contact-form-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 20px; /* minimal top & bottom spacing */
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 1200px;       /* slightly narrower */
+  background: #fff3cd;    /* yellow tone */
+  padding: 15px 15px;     /* very compact padding */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;               /* very small gap between fields */
+}
+
+.contact-form label { font-weight: 500; font-size: 0.95rem; }
+.contact-form input, .contact-form textarea {
+  padding: 6px 8px;       /* smallest comfortable padding */
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.contact-form textarea { height: 60px; } /* minimal height */
+.contact-form button { 
+  background: #ffc107; 
+  color: #fff; 
+  border: none; 
+  padding: 8px 14px;      /* smaller button */
+  border-radius: 6px; 
+  cursor: pointer; 
+  transition: 0.3s; 
+  font-size: 0.9rem; 
+}
+
+.contact-form button:hover { background: #e0a800; }

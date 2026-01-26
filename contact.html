@@ -5,39 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Punjab Industrial Engineering Services</title>
 
-    <!-- Favicon -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/logg.png">
   <link rel="apple-touch-icon" href="images/logg.png">
 
-
+  <!-- Bootstrap & FontAwesome -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  
+  <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .led-glow { filter: drop-shadow(0 0 8px #f4b400); transition: all 0.3s ease; }
-    .led-glow:hover { transform: scale(1.05); filter: drop-shadow(0 0 15px #f4b400); }
-    .section-title { text-align: center; margin-bottom: 30px; font-size: 28px; text-shadow: 0 0 6px #f4b400; }
-    .contact-buttons a { margin: 10px; }
-  </style>
 </head>
 <body>
 
-<!-- Updated Navbar -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
   <div class="container">
-    <!-- Brand / Logo -->
     <a class="navbar-brand d-flex align-items-center" href="index.html">
       <img src="images/logg.png" alt="PIE Logo" height="30" class="me-2 rounded-circle">
-
       <span>Punjab Industrial Engineering Services</span>
     </a>
 
-    <!-- Hamburger menu for mobile -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="mainNavbar">
       <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
         <li class="nav-item"><a class="nav-link fw-bold" href="index.html">Home</a></li>
@@ -45,35 +37,70 @@
         <li class="nav-item"><a class="nav-link fw-bold" href="portfolio.html">Portfolio</a></li>
         <li class="nav-item"><a class="nav-link fw-bold" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link fw-bold active" href="contact.html">Contact</a></li>
-        <li class="nav-item d-lg-flex gap-2 mt-3 mt-lg-0">
-          <a href="tel:03006904153" class="btn btn-warning btn-sm fw-bold">
-            <i class="bi bi-telephone-fill"></i> Call
-          </a>
-          <a href="https://wa.me/923006904153" target="_blank" id="contactWhatsApp" class="btn btn-success btn-sm fw-bold">
-            <i class="bi bi-whatsapp"></i> WhatsApp
-          </a>
-        </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<section class="contact py-8 bg-light text-center">
-  <div class="container">
-    <h3 class="section-title">Get in Touch</h3>
+<!-- ================= CONTACT FORM ================= -->
+<section class="contact-form-container">
+  <form class="contact-form" id="contactForm">
+    <h3 class="section-title">Send Us a Message</h3>
+
+    <label>Your Name</label>
+    <input type="text" id="name" placeholder="Enter your name" required>
+
+    <label>Email Address</label>
+    <input type="email" id="email" placeholder="Enter your email" required>
+
+    <label>Message</label>
+    <textarea id="message" placeholder="Write your message here..." required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- ================= CONTACT INFO ================= -->
+<section id="contact" class="contact-map-container bg-warning">
+  <div class="contact-text">
+    <h3 class="section-title mb-3">Get in Touch</h3>
     <p><strong>Location:</strong> 12 Kilometer Arifwala Road, Sahiwal</p>
     <p><strong>Phone:</strong> 0300-6904153</p>
     <div class="contact-buttons">
-      <a href="tel:03006904153" class="btn btn-warning btn-lg fw-bold led-glow"><i class="bi bi-telephone-fill"></i> Call Now</a>
-      <a href="https://wa.me/923006904153" target="_blank" class="btn btn-success btn-lg fw-bold led-glow"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+      <a href="tel:03006904153" class="btn btn-warning btn-lg fw-bold led-glow">
+        <i class="bi bi-telephone-fill"></i> Call Now
+      </a>
+      <a href="https://wa.me/923006904153" target="_blank" id="contactWhatsAppContact" class="btn btn-success btn-lg fw-bold led-glow">
+        <i class="bi bi-whatsapp"></i> WhatsApp
+      </a>
     </div>
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="footer bg-dark text-light py-3 text-center">
   <p>© 2026 Punjab Industrial Engineering Services | punjabeng.com</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JS to open Gmail or default mail client -->
+<script>
+  const form = document.getElementById('contactForm');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    const subject = encodeURIComponent('Contact Form Submission');
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
+
+    window.location.href = `mailto:punjabtraderscompany@gmail.com?subject=${subject}&body=${body}`;
+  });
+</script>
+
 </body>
 </html>
