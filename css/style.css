@@ -4,48 +4,57 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth; /* smooth scrolling */
 }
 
 body {
   line-height: 1.6;
-  color: #111;
+  color: #111; /* black text */
+  background: #ffffff; /* white background */
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
 /* ================= NAVBAR ================= */
 .navbar {
-  background-color: #111 !important;
+  background-color: #000000 !important; /* black navbar */
+  transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
 .navbar-brand span {
-  color: #fff;
+  color: #ffd700; /* golden brand text */
   font-size: 13px;
+  transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link {
-  color: #fff !important;
+  color: #ffffff !important; /* white links */
   font-weight: bold;
   padding: 8px 14px;
-  transition: color 0.3s ease;
+  transition: color 0.4s ease, transform 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-  color: #f4b400 !important;
+  color: #f4b400 !important; /* golden hover */
+  transform: scale(1.05);
 }
 
 .navbar-toggler {
-  border-color: #f4b400;
+  border-color: #f4b400; /* golden border */
+  transition: all 0.3s ease;
 }
 
 .navbar-toggler-icon {
   filter: invert(1);
+  transition: transform 0.3s ease;
 }
 
 @media (max-width: 991px) {
   .navbar-collapse {
-    background: #111;
+    background: #000000; /* black mobile menu */
     padding: 15px;
     border-radius: 8px;
+    transition: all 0.3s ease;
   }
 
   .navbar-nav .nav-item {
@@ -55,34 +64,54 @@ body {
 
   .navbar-nav .btn {
     width: 100%;
+    transition: all 0.3s ease;
   }
 }
 
 /* ================= HERO ================= */
 .hero {
-  background: linear-gradient(135deg, #f4b400, #ffcc33);
+  background: linear-gradient(135deg, #f4b400, #ffd700); /* golden yellow gradient */
   text-align: center;
   padding: 60px 0;
+  animation: fadeInHero 1.2s ease forwards;
 }
 
 .hero h2 {
   font-size: 32px;
   margin-bottom: 10px;
+  color: #000000; /* black text */
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.hero h2:hover {
+  color: #008000; /* green hover */
+  transform: scale(1.03);
 }
 
 .hero-buttons a {
   margin: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-buttons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px rgba(244,180,0,0.5); /* subtle golden glow */
+}
+
+@keyframes fadeInHero {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* ================= LED / HOVER EFFECTS ================= */
 .led-glow {
-  filter: drop-shadow(0 0 8px #f4b400);
+  filter: drop-shadow(0 0 8px #f4b400); /* golden glow */
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .led-glow:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 15px #f4b400);
+  transform: scale(1.08) rotate(-1deg);
+  filter: drop-shadow(0 0 20px #ffd700);
 }
 
 /* ================= SERVICES ================= */
@@ -91,31 +120,37 @@ body {
 }
 
 .service-box {
-  background: #f9f9f9;
+  background: #ffffff; /* white box */
   padding: 25px;
   text-align: center;
   border-radius: 8px;
-  border: 1px solid #ddd;
-  border-left: 5px solid #f4b400;
-  transition: 0.4s;
+  border: 1px solid #008000; /* green border */
+  border-left: 5px solid #f4b400; /* golden stripe */
+  transition: all 0.5s ease;
   height: 100%;
+  animation: fadeInService 1s ease forwards;
 }
 
 .service-box i {
   font-size: 36px;
-  color: #f4b400;
+  color: #f4b400; /* golden icon */
   margin-bottom: 12px;
-  transition: 0.3s;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .service-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 20px rgba(244,180,0,0.4);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 25px rgba(244,180,0,0.5); /* golden glow */
 }
 
 .service-box:hover i {
-  transform: scale(1.2);
-  color: #ffcc33;
+  transform: scale(1.25) rotate(-5deg);
+  color: #ffd700;
+}
+
+@keyframes fadeInService {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* ================= PORTFOLIO ================= */
@@ -127,12 +162,12 @@ body {
   width: 100%;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.4s;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .portfolio-grid img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(244,180,0,0.6);
+  transform: scale(1.07) rotate(-1deg);
+  box-shadow: 0 0 25px rgba(244,180,0,0.6);
 }
 
 /* ================= SECTION TITLES ================= */
@@ -141,6 +176,8 @@ body {
   margin-bottom: 30px;
   font-size: 26px;
   font-weight: 700;
+  color: #000000; /* black title */
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .why-us .section-title,
@@ -149,13 +186,25 @@ body {
   text-shadow: 0 0 6px #f4b400;
 }
 
+.section-title:hover {
+  color: #008000; /* green hover */
+  transform: scale(1.02);
+}
+
 /* ================= WHY US ================= */
 .why-us {
-  background: #f8f9fa;
+  background: #ffffff; /* white background */
+  animation: fadeIn 1s ease forwards;
 }
 
 .why-us ul li {
   margin-bottom: 15px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.why-us ul li:hover {
+  transform: translateX(4px);
+  color: #f4b400; /* golden highlight */
 }
 
 @media (max-width: 768px) {
@@ -169,10 +218,12 @@ body {
   }
 }
 
-/* ================= CONTACT ================= */
+/* ================= CONTACT / GET IN TOUCH ================= */
 #contact {
   padding: 20px 15px;
-  background: var(--cream);
+  background: #008000; /* green background for Get in Touch section */
+  color: #030000; /* white text */
+  animation: fadeIn 1.2s ease forwards;
 }
 
 #contact .container {
@@ -191,12 +242,19 @@ body {
 .contact-text h3 {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--green);
+  color: #056200; /* golden heading */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-text h3:hover {
+  transform: scale(1.02);
+  color: #019d0c;
 }
 
 .contact-text p {
   font-size: 0.8rem;
   margin-bottom: 5px;
+  transition: color 0.3s ease;
 }
 
 /* Contact Buttons */
@@ -210,12 +268,16 @@ body {
 .contact-buttons .btn {
   font-size: 0.7rem;
   padding: 5px 10px;
-  transition: 0.3s;
+  background: #019d0c;
+  color: #000000;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 .contact-buttons .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 14px rgba(255,215,0,0.7); /* golden glow */
 }
 
 /* ================= CONTACT FORM ================= */
@@ -227,35 +289,35 @@ body {
 .contact-form {
   width: 100%;
   max-width: 1200px;
-  background: #fff3cd;
+  background: #ffffff; /* white form background */
   padding: 16px;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
   gap: 8px;
-  transition: 0.4s;
+  transition: all 0.4s ease;
 }
 
 .contact-form:hover {
-  box-shadow: 0 0 25px rgba(244,180,0,0.6);
-  transform: translateY(-3px);
+  box-shadow: 0 0 28px rgba(244,180,0,0.7);
+  transform: translateY(-4px) scale(1.01);
 }
 
 .contact-form input,
 .contact-form textarea {
   padding: 7px 9px;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid #008000; /* green border */
   font-size: 0.85rem;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #f4b400;
-  box-shadow: 0 0 8px rgba(244,180,0,0.6);
+  border-color: #026940;
+  box-shadow: 0 0 10px rgba(2, 83, 40, 0.6);
 }
 
 .contact-form textarea {
@@ -263,26 +325,32 @@ body {
 }
 
 .contact-form button {
-  background: #ffc107;
-  color: #fff;
+  background: #09a162;
+  color: #000000;
   border: none;
   padding: 8px;
   border-radius: 6px;
   font-size: 0.9rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .contact-form button:hover {
-  background: #e0a800;
-  box-shadow: 0 0 12px rgba(244,180,0,0.8);
-  transform: scale(1.02);
+  background: #045e38;
+  box-shadow: 0 0 16px rgba(0, 59, 48, 0.8);
+  transform: scale(1.04) rotate(-1deg);
 }
 
 /* ================= FOOTER ================= */
 .footer {
-  background: #111;
-  color: #fff;
+  background: #000000; /* black footer */
+  color: #045e38; /* golden text */
   text-align: center;
   padding: 10px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.footer:hover {
+  background: #111111;
+  color: #ffffff;
 }
