@@ -11,7 +11,7 @@ body {
   color: #111;
 }
 
-/* ================= BOOTSTRAP NAVBAR (FIXED & CLEAN) ================= */
+/* ================= NAVBAR ================= */
 .navbar {
   background-color: #111 !important;
 }
@@ -41,10 +41,9 @@ body {
   filter: invert(1);
 }
 
-/* Mobile dropdown spacing */
 @media (max-width: 991px) {
   .navbar-collapse {
-    background-color: #111;
+    background: #111;
     padding: 15px;
     border-radius: 8px;
   }
@@ -71,15 +70,11 @@ body {
   margin-bottom: 10px;
 }
 
-.hero p {
-  margin-bottom: 20px;
-}
-
 .hero-buttons a {
   margin: 5px;
 }
 
-/* ================= LED & HOVER EFFECTS ================= */
+/* ================= LED / HOVER EFFECTS ================= */
 .led-glow {
   filter: drop-shadow(0 0 8px #f4b400);
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -101,9 +96,8 @@ body {
   text-align: center;
   border-radius: 8px;
   border: 1px solid #ddd;
-  cursor: pointer;
-  transition: all 0.4s ease;
   border-left: 5px solid #f4b400;
+  transition: 0.4s;
   height: 100%;
 }
 
@@ -111,12 +105,7 @@ body {
   font-size: 36px;
   color: #f4b400;
   margin-bottom: 12px;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.service-box:hover i {
-  transform: scale(1.2);
-  color: #ffcc33;
+  transition: 0.3s;
 }
 
 .service-box:hover {
@@ -124,16 +113,21 @@ body {
   box-shadow: 0 0 20px rgba(244,180,0,0.4);
 }
 
+.service-box:hover i {
+  transform: scale(1.2);
+  color: #ffcc33;
+}
+
 /* ================= PORTFOLIO ================= */
 .portfolio {
-  padding: 50px 1;
+  padding: 50px 0;
 }
 
 .portfolio-grid img {
   width: 100%;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: 0.4s;
 }
 
 .portfolio-grid img:hover {
@@ -141,45 +135,148 @@ body {
   box-shadow: 0 0 20px rgba(244,180,0,0.6);
 }
 
+/* ================= SECTION TITLES ================= */
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.why-us .section-title,
+#contact .section-title {
+  font-size: 32px;
+  text-shadow: 0 0 6px #f4b400;
+}
+
+/* ================= WHY US ================= */
+.why-us {
+  background: #f8f9fa;
+}
+
+.why-us ul li {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .why-us {
+    text-align: center;
+  }
+
+  .why-us ul {
+    padding-left: 0;
+    list-style-position: inside;
+  }
+}
+
 /* ================= CONTACT ================= */
-.contact {
-  min-height: 80vh; /* takes at least 70% of viewport height */
+#contact {
+  padding: 20px 15px;
+  background: var(--cream);
+}
+
+#contact .container {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Contact Text */
+.contact-text {
+  text-align: left;
+  padding-left: 15px;
+}
+
+.contact-text h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.contact-text p {
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+/* Contact Buttons */
+.contact-buttons {
   display: flex;
-  flex-direction: column;
-  justify-content: center; /* centers content vertically */
-}
-.contact-bg-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 600px; /* adjust as needed */
-  opacity: 0.1;     /* makes it subtle */
-  pointer-events: none; /* image won’t block clicks */
-  z-index: 1;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
 }
 
-
-.contact-buttons a {
-  margin: 10px;
-  transition: all 0.3s ease;
+.contact-buttons .btn {
+  font-size: 0.7rem;
+  padding: 5px 10px;
+  transition: 0.3s;
 }
 
-.contact-buttons a:hover {
+.contact-buttons .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 12px rgba(0,0,0,0.3);
 }
 
-.pre-filled-message {
-  margin-top: 15px;
-  font-size: 1rem;
-  color: #333;
+/* ================= CONTACT FORM ================= */
+.contact-form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 1200px;
   background: #fff3cd;
-  border: 1px solid #ffeeba;
-  padding: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: 0.4s;
+}
+
+.contact-form:hover {
+  box-shadow: 0 0 25px rgba(244,180,0,0.6);
+  transform: translateY(-3px);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 7px 9px;
   border-radius: 6px;
-  display: none;
+  border: 1px solid #ccc;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #f4b400;
+  box-shadow: 0 0 8px rgba(244,180,0,0.6);
+}
+
+.contact-form textarea {
+  min-height: 60px;
+}
+
+.contact-form button {
+  background: #ffc107;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #e0a800;
+  box-shadow: 0 0 12px rgba(244,180,0,0.8);
+  transform: scale(1.02);
 }
 
 /* ================= FOOTER ================= */
@@ -189,147 +286,3 @@ body {
   text-align: center;
   padding: 10px;
 }
-
-/* ================= SECTION TITLES ================= */
-.section-title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 26px;
-}
-
-/* ================= About Section ================= */
-/* Why Choose Us Section */
-.why-us {
-  background-color: #f8f9fa;
-}
-
-.why-us .section-title {
-  font-size: 32px;
-  font-weight: 700;
-  text-shadow: 0 0 6px #f4b400;
-}
-
-.why-us ul {
-  padding-left: 1rem;
-}
-
-.why-us ul li {
-  margin-bottom: 15px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .why-us .row {
-    text-align: center;
-  }
-
-  .why-us ul {
-    padding-left: 0;
-    list-style-position: inside;
-  }
-
-  .why-us img {
-    margin-bottom: 20px;
-  }
-}
-
-
-/* ================= Contact Section Layout ================= */
-#contact {
-  padding: 20px 15px; /* smaller height and smaller side gap */
-  background: var(--cream);
-}
-
-#contact .container {
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 30px;
-  align-items: start;
-  text-align: center;
-}
-
-#contact h3.section-title {
-  text-align: left;
-  font-size: 32px;
-  font-weight: 700;
-  text-shadow: 0 0 6px #f4b400;
-}
-
-#contact .contact-buttons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-/* Left text content with slight left gap */
-.contact-text {
-  flex: 1 1 200px;          /* narrower text column */
-  text-align: left;
-  padding-left: 15px;       /* small gap from left */
-}
-
-
-.contact-text h3 {
-  font-size: 1.2rem;        /* smaller heading */
-  font-weight: 700;
-  color: var(--green);
-  margin-bottom: 6px;
-}
-
-.contact-text p {
-  margin-bottom: 5px;
-  font-size: 0.8rem;        /* smaller text */
-  color: var(--text);
-}
-
-.contact-buttons {
-  margin-top: 8px;
-}
-
-.contact-buttons .btn {
-  margin-right: 5px;
-  margin-bottom: 5px;
-  font-size: 0.7rem;
-  padding: 5px 10px;
-}
-
-/* ================= CONTACT FORM ================= */
-.contact-form-container {
-  display: flex;
-  justify-content: center;
-  margin: 20px 20px; /* minimal top & bottom spacing */
-}
-
-.contact-form {
-  width: 100%;
-  max-width: 1200px;       /* slightly narrower */
-  background: #fff3cd;    /* yellow tone */
-  padding: 15px 15px;     /* very compact padding */
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;               /* very small gap between fields */
-}
-
-.contact-form label { font-weight: 500; font-size: 0.95rem; }
-.contact-form input, .contact-form textarea {
-  padding: 6px 8px;       /* smallest comfortable padding */
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 0.9rem;
-}
-
-.contact-form textarea { height: 60px; } /* minimal height */
-.contact-form button { 
-  background: #ffc107; 
-  color: #fff; 
-  border: none; 
-  padding: 8px 14px;      /* smaller button */
-  border-radius: 6px; 
-  cursor: pointer; 
-  transition: 0.3s; 
-  font-size: 0.9rem; 
-}
-
-.contact-form button:hover { background: #e0a800; }
